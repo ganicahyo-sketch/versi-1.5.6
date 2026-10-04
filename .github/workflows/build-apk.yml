@@ -2,7 +2,11 @@ name: Build APK - STASIUN CUACA DESA TURUS v1.5.6
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
   workflow_dispatch:
   tags:
     - 'v*'
@@ -10,15 +14,20 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: android-build-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build-apk:
-    runs-on: ubuntu-latest
-    timeout-minutes: 40
+    name: Build Android APK
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v5
+      - name: Checkout source
+        uses: actions/checkout@v7
 
-      - name: Set up Java 25
+      - name: Set up JDK 25
         uses: actions/setup-java@v6
         with:
           distribution: temurin
@@ -26,37 +35,54 @@ jobs:
           cache: gradle
 
       - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
-
-      - name: Install Android SDK packages
-        run: |
-          yes | sdkmanager --licenses >/dev/null || true
-          sdkmanager "platform-tools" "platforms;android-36" "build-tools;36.0.0"
+        uses: android-actions/setup-android@v4
+        with:
+          packages: 'platform-tools platforms;android-36 build-tools;36.0.0'
+          accept-android-sdk-licenses: 'yes'
+          log-accepted-android-sdk-licenses: 'false'
 
       - name: Set up Gradle 9.4.1
-        uses: gradle/actions/setup-gradle@v5
+        uses: gradle/actions/setup-gradle@v6
         with:
           gradle-version: '9.4.1'
+          cache-provider: basic
 
-      - name: Check Java and Gradle
+      - name: Verify build environment
+        shell: bash
         run: |
+          set -euxo pipefail
           java --version
           gradle --version
+          sdkmanager --version
+          test -f settings.gradle
+          test -f build.gradle
+          test -f app/build.gradle
+          test -f app/src/main/AndroidManifest.xml
+
+      - name: Clean project
+        run: gradle --no-daemon clean --stacktrace
 
       - name: Build debug APK
-        run: gradle --no-daemon clean assembleDebug --stacktrace
+        run: gradle --no-daemon :app:assembleDebug --stacktrace --warning-mode all
 
       - name: Build release APK
-        run: gradle --no-daemon assembleRelease --stacktrace
+        run: gradle --no-daemon :app:assembleRelease --stacktrace --warning-mode all
 
-      - name: Verify APKs
+      - name: Verify APK outputs
+        shell: bash
         run: |
-          test -f app/build/outputs/apk/debug/app-debug.apk
-          test -f app/build/outputs/apk/release/app-release-unsigned.apk
-          ls -lh app/build/outputs/apk/debug/app-debug.apk app/build/outputs/apk/release/app-release-unsigned.apk
+          set -euxo pipefail
+          test -s app/build/outputs/apk/debug/app-debug.apk
+          test -s app/build/outputs/apk/release/app-release-unsigned.apk
+          sha256sum \
+            app/build/outputs/apk/debug/app-debug.apk \
+            app/build/outputs/apk/release/app-release-unsigned.apk
+          ls -lh \
+            app/build/outputs/apk/debug/app-debug.apk \
+            app/build/outputs/apk/release/app-release-unsigned.apk
 
       - name: Upload APK artifacts
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: STASIUN-CUACA-DESA-TURUS-v1.5.6-APK
           path: |
@@ -64,4 +90,3 @@ jobs:
             app/build/outputs/apk/release/app-release-unsigned.apk
           if-no-files-found: error
           retention-days: 30
-
