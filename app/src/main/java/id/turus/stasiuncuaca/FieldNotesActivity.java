@@ -416,7 +416,7 @@ public class FieldNotesActivity extends Activity {
             double at = num(airTemp.getText().toString()), rh = num(airRh.getText().toString()), pressureHpa = num(pressure.getText().toString()), rain = num(rain24.getText().toString()), e0 = num(et0.getText().toString()), luxVal = num(lux.getText().toString()), parVal = num(par.getText().toString()), sunVal = num(sunHours.getText().toString()), wind = num(windSpeed.getText().toString());
             double vpd = AgronomyEngine.vpd(at, rh);
             double[] credit = fertilizerCredit(prefs, c, 90);
-            double targetYield = num(targetYield.getText().toString());
+            double targetYieldValue = num(targetYield.getText().toString());
 
             StringBuilder s = new StringBuilder();
             s.append("ANALISIS AGRONOMI TERPADU • ").append(p.name).append("\n");
@@ -447,9 +447,9 @@ public class FieldNotesActivity extends Activity {
             s.append("Kelembapan tanah: ").append(show(moist)).append(" % → ").append(AgronomyEngine.classifyMoisture(moist, c)).append("\n");
             if (!Double.isNaN(st)) s.append("Suhu tanah: ").append(show(st)).append(" °C\n");
 
-            double nNeed = AgronomyEngine.nutrientNeed(n, "N", c, days, credit[0], targetYield, methodName, depth, bd);
-            double pNeed = AgronomyEngine.nutrientNeed(pp, "P", c, days, credit[1], targetYield, methodName, depth, bd);
-            double kNeed = AgronomyEngine.nutrientNeed(k, "K", c, days, credit[2], targetYield, methodName, depth, bd);
+            double nNeed = AgronomyEngine.nutrientNeed(n, "N", c, days, credit[0], targetYieldValue, methodName, depth, bd);
+            double pNeed = AgronomyEngine.nutrientNeed(pp, "P", c, days, credit[1], targetYieldValue, methodName, depth, bd);
+            double kNeed = AgronomyEngine.nutrientNeed(k, "K", c, days, credit[2], targetYieldValue, methodName, depth, bd);
             s.append("\n2. KECUKUPAN NPK & PERKIRAAN DOSIS FASE\n");
             s.append("Kebutuhan screening fase ini: N ").append(show(nNeed)).append(" kg/ha, P2O5 ").append(show(pNeed)).append(" kg/ha, K2O ").append(show(kNeed)).append(" kg/ha.\n");
             s.append("Kredit pupuk tercatat 90 hari: N ").append(show(credit[0])).append(", P2O5 ").append(show(credit[1])).append(", K2O ").append(show(credit[2])).append(" kg/ha.\n");
