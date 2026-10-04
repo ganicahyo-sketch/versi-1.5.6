@@ -90,7 +90,7 @@
                         android:layout_weight="1"
                         android:hint="Tanggal YYYY-MM-DD"
                         android:textColor="@color/text_main"
-                        android:hintTextColor="@color/text_muted"
+                        android:textColorHint="@color/text_muted"
                         android:singleLine="true"/>
 
                     <EditText
@@ -100,7 +100,7 @@
                         android:layout_weight="1"
                         android:hint="Jam WIB"
                         android:textColor="@color/text_main"
-                        android:hintTextColor="@color/text_muted"
+                        android:textColorHint="@color/text_muted"
                         android:singleLine="true"/>
                 </LinearLayout>
 
@@ -110,7 +110,7 @@
                     android:layout_height="48dp"
                     android:hint="Tanaman/komoditas"
                     android:textColor="@color/text_main"
-                    android:hintTextColor="@color/text_muted"
+                    android:textColorHint="@color/text_muted"
                     android:singleLine="true"/>
 
                 <TextView
@@ -131,7 +131,7 @@
                     android:layout_height="48dp"
                     android:hint="Tanggal tanam YYYY-MM-DD (agar fase otomatis diprediksi)"
                     android:textColor="@color/text_main"
-                    android:hintTextColor="@color/text_muted"
+                    android:textColorHint="@color/text_muted"
                     android:singleLine="true"/>
 
                 <EditText
@@ -141,7 +141,7 @@
                     android:hint="Umur tanaman (HST), isi bila tanggal tanam tidak ada"
                     android:inputType="number"
                     android:textColor="@color/text_main"
-                    android:hintTextColor="@color/text_muted"
+                    android:textColorHint="@color/text_muted"
                     android:singleLine="true"/>
 
                 <Spinner
@@ -165,7 +165,7 @@
                     android:hint="Target hasil (t/ha), opsional untuk skala kebutuhan hara"
                     android:inputType="numberDecimal"
                     android:textColor="@color/text_main"
-                    android:hintTextColor="@color/text_muted"
+                    android:textColorHint="@color/text_muted"
                     android:singleLine="true"/>
 
                 <EditText
@@ -174,7 +174,7 @@
                     android:layout_height="48dp"
                     android:hint="Fase/umur tanaman, mis. vegetatif, generatif, 45 HST"
                     android:textColor="@color/text_main"
-                    android:hintTextColor="@color/text_muted"
+                    android:textColorHint="@color/text_muted"
                     android:singleLine="true"/>
 
                 <EditText
@@ -184,7 +184,7 @@
                     android:hint="Luas petak (ha)"
                     android:inputType="numberDecimal"
                     android:textColor="@color/text_main"
-                    android:hintTextColor="@color/text_muted"
+                    android:textColorHint="@color/text_muted"
                     android:singleLine="true"/>
 
                 <TextView
@@ -256,7 +256,7 @@
                     android:hint="pH tanah"
                     android:inputType="numberDecimal"
                     android:textColor="@color/text_main"
-                    android:hintTextColor="@color/text_muted"
+                    android:textColorHint="@color/text_muted"
                     android:singleLine="true"/>
 
                 <EditText
@@ -266,7 +266,7 @@
                     android:hint="Kelembapan tanah (%)"
                     android:inputType="numberDecimal"
                     android:textColor="@color/text_main"
-                    android:hintTextColor="@color/text_muted"
+                    android:textColorHint="@color/text_muted"
                     android:singleLine="true"/>
 
                 <EditText
@@ -276,7 +276,7 @@
                     android:hint="Suhu tanah (°C)"
                     android:inputType="numberDecimal"
                     android:textColor="@color/text_main"
-                    android:hintTextColor="@color/text_muted"
+                    android:textColorHint="@color/text_muted"
                     android:singleLine="true"/>
 
                 <EditText
@@ -286,7 +286,7 @@
                     android:hint="EC tanah (µS/cm)"
                     android:inputType="numberDecimal"
                     android:textColor="@color/text_main"
-                    android:hintTextColor="@color/text_muted"
+                    android:textColorHint="@color/text_muted"
                     android:singleLine="true"/>
 
                 <EditText
@@ -296,7 +296,7 @@
                     android:hint="N tersedia (mg/kg)"
                     android:inputType="numberDecimal"
                     android:textColor="@color/text_main"
-                    android:hintTextColor="@color/text_muted"
+                    android:textColorHint="@color/text_muted"
                     android:singleLine="true"/>
 
                 <EditText
@@ -306,7 +306,7 @@
                     android:hint="P tersedia (mg/kg)"
                     android:inputType="numberDecimal"
                     android:textColor="@color/text_main"
-                    android:hintTextColor="@color/text_muted"
+                    android:textColorHint="@color/text_muted"
                     android:singleLine="true"/>
 
                 <EditText
@@ -316,7 +316,7 @@
                     android:hint="K tersedia (mg/kg)"
                     android:inputType="numberDecimal"
                     android:textColor="@color/text_main"
-                    android:hintTextColor="@color/text_muted"
+                    android:textColorHint="@color/text_muted"
                     android:singleLine="true"/>
 
                 <EditText
@@ -326,24 +326,24 @@
                     android:hint="Kedalaman pengukuran (cm, opsional)"
                     android:inputType="numberDecimal"
                     android:textColor="@color/text_main"
-                    android:hintTextColor="@color/text_muted"
+                    android:textColorHint="@color/text_muted"
                     android:singleLine="true"/>
 
-                <EditText android:id="@+id/fnSoilBulkDensity" android:layout_width="match_parent" android:layout_height="48dp" android:hint="Bulk density (g/cm³), untuk hitung stok hara; default 1,30" android:inputType="numberDecimal" android:textColor="@color/text_main" android:hintTextColor="@color/text_muted" android:singleLine="true"/>
-                <EditText android:id="@+id/fnSoilFc" android:layout_width="match_parent" android:layout_height="48dp" android:hint="Field Capacity / FC (% volume), hasil lab" android:inputType="numberDecimal" android:textColor="@color/text_main" android:hintTextColor="@color/text_muted" android:singleLine="true"/>
-                <EditText android:id="@+id/fnSoilPwp" android:layout_width="match_parent" android:layout_height="48dp" android:hint="Permanent Wilting Point / PWP (% volume), hasil lab" android:inputType="numberDecimal" android:textColor="@color/text_main" android:hintTextColor="@color/text_muted" android:singleLine="true"/>
+                <EditText android:id="@+id/fnSoilBulkDensity" android:layout_width="match_parent" android:layout_height="48dp" android:hint="Bulk density (g/cm³), untuk hitung stok hara; default 1,30" android:inputType="numberDecimal" android:textColor="@color/text_main" android:textColorHint="@color/text_muted" android:singleLine="true"/>
+                <EditText android:id="@+id/fnSoilFc" android:layout_width="match_parent" android:layout_height="48dp" android:hint="Field Capacity / FC (% volume), hasil lab" android:inputType="numberDecimal" android:textColor="@color/text_main" android:textColorHint="@color/text_muted" android:singleLine="true"/>
+                <EditText android:id="@+id/fnSoilPwp" android:layout_width="match_parent" android:layout_height="48dp" android:hint="Permanent Wilting Point / PWP (% volume), hasil lab" android:inputType="numberDecimal" android:textColor="@color/text_main" android:textColorHint="@color/text_muted" android:singleLine="true"/>
                 <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Ambang N tersedia (isi sesuai metode/lab, mg/kg)" android:textColor="@color/cyan" android:textSize="11sp"/>
-                <EditText android:id="@+id/fnSoilNLow" android:layout_width="match_parent" android:layout_height="48dp" android:hint="Batas N rendah (mg/kg), opsional" android:inputType="numberDecimal" android:textColor="@color/text_main" android:hintTextColor="@color/text_muted" android:singleLine="true"/>
-                <EditText android:id="@+id/fnSoilNHigh" android:layout_width="match_parent" android:layout_height="48dp" android:hint="Batas N tinggi (mg/kg), opsional" android:inputType="numberDecimal" android:textColor="@color/text_main" android:hintTextColor="@color/text_muted" android:singleLine="true"/>
+                <EditText android:id="@+id/fnSoilNLow" android:layout_width="match_parent" android:layout_height="48dp" android:hint="Batas N rendah (mg/kg), opsional" android:inputType="numberDecimal" android:textColor="@color/text_main" android:textColorHint="@color/text_muted" android:singleLine="true"/>
+                <EditText android:id="@+id/fnSoilNHigh" android:layout_width="match_parent" android:layout_height="48dp" android:hint="Batas N tinggi (mg/kg), opsional" android:inputType="numberDecimal" android:textColor="@color/text_main" android:textColorHint="@color/text_muted" android:singleLine="true"/>
                 <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Metode analisis N/P/K" android:textColor="@color/cyan" android:textSize="11sp"/>
                 <Spinner android:id="@+id/fnSoilTestMethod" android:layout_width="match_parent" android:layout_height="48dp"/>
-                <EditText android:id="@+id/fnSoilPhBuffer" android:layout_width="match_parent" android:layout_height="48dp" android:hint="pH-buffer (hasil laboratorium), bila pH masam" android:inputType="numberDecimal" android:textColor="@color/text_main" android:hintTextColor="@color/text_muted" android:singleLine="true"/>
-                <EditText android:id="@+id/fnSoilAlDd" android:layout_width="match_parent" android:layout_height="48dp" android:hint="Al-dd (cmol(+)/kg), bila tersedia" android:inputType="numberDecimal" android:textColor="@color/text_main" android:hintTextColor="@color/text_muted" android:singleLine="true"/>
-                <EditText android:id="@+id/fnSoilHDd" android:layout_width="match_parent" android:layout_height="48dp" android:hint="H-dd (cmol(+)/kg), bila tersedia" android:inputType="numberDecimal" android:textColor="@color/text_main" android:hintTextColor="@color/text_muted" android:singleLine="true"/>
-                <EditText android:id="@+id/fnSoilCec" android:layout_width="match_parent" android:layout_height="48dp" android:hint="CEC / KTK (cmol(+)/kg), bila tersedia" android:inputType="numberDecimal" android:textColor="@color/text_main" android:hintTextColor="@color/text_muted" android:singleLine="true"/>
-                <EditText android:id="@+id/fnSoilOm" android:layout_width="match_parent" android:layout_height="48dp" android:hint="Bahan organik (%)" android:inputType="numberDecimal" android:textColor="@color/text_main" android:hintTextColor="@color/text_muted" android:singleLine="true"/>
-                <EditText android:id="@+id/fnSoilEce" android:layout_width="match_parent" android:layout_height="48dp" android:hint="ECe laboratorium (dS/m), jangan diisi dengan EC sensor" android:inputType="numberDecimal" android:textColor="@color/text_main" android:hintTextColor="@color/text_muted" android:singleLine="true"/>
-                <EditText android:id="@+id/fnSoilLimeReq" android:layout_width="match_parent" android:layout_height="48dp" android:hint="Kebutuhan kapur/dolomit hasil lab (kg/ha), bila ada" android:inputType="numberDecimal" android:textColor="@color/text_main" android:hintTextColor="@color/text_muted" android:singleLine="true"/>
+                <EditText android:id="@+id/fnSoilPhBuffer" android:layout_width="match_parent" android:layout_height="48dp" android:hint="pH-buffer (hasil laboratorium), bila pH masam" android:inputType="numberDecimal" android:textColor="@color/text_main" android:textColorHint="@color/text_muted" android:singleLine="true"/>
+                <EditText android:id="@+id/fnSoilAlDd" android:layout_width="match_parent" android:layout_height="48dp" android:hint="Al-dd (cmol(+)/kg), bila tersedia" android:inputType="numberDecimal" android:textColor="@color/text_main" android:textColorHint="@color/text_muted" android:singleLine="true"/>
+                <EditText android:id="@+id/fnSoilHDd" android:layout_width="match_parent" android:layout_height="48dp" android:hint="H-dd (cmol(+)/kg), bila tersedia" android:inputType="numberDecimal" android:textColor="@color/text_main" android:textColorHint="@color/text_muted" android:singleLine="true"/>
+                <EditText android:id="@+id/fnSoilCec" android:layout_width="match_parent" android:layout_height="48dp" android:hint="CEC / KTK (cmol(+)/kg), bila tersedia" android:inputType="numberDecimal" android:textColor="@color/text_main" android:textColorHint="@color/text_muted" android:singleLine="true"/>
+                <EditText android:id="@+id/fnSoilOm" android:layout_width="match_parent" android:layout_height="48dp" android:hint="Bahan organik (%)" android:inputType="numberDecimal" android:textColor="@color/text_main" android:textColorHint="@color/text_muted" android:singleLine="true"/>
+                <EditText android:id="@+id/fnSoilEce" android:layout_width="match_parent" android:layout_height="48dp" android:hint="ECe laboratorium (dS/m), jangan diisi dengan EC sensor" android:inputType="numberDecimal" android:textColor="@color/text_main" android:textColorHint="@color/text_muted" android:singleLine="true"/>
+                <EditText android:id="@+id/fnSoilLimeReq" android:layout_width="match_parent" android:layout_height="48dp" android:hint="Kebutuhan kapur/dolomit hasil lab (kg/ha), bila ada" android:inputType="numberDecimal" android:textColor="@color/text_main" android:textColorHint="@color/text_muted" android:singleLine="true"/>
                 <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="Catatan: stok hara adalah massa unsur pada lapisan tanah; stok bukan berarti seluruhnya langsung terserap tanaman." android:textColor="@color/text_muted" android:textSize="10sp"/>
 
                 <TextView
@@ -379,7 +379,7 @@
                     android:hint="Suhu udara (°C)"
                     android:inputType="numberDecimal"
                     android:textColor="@color/text_main"
-                    android:hintTextColor="@color/text_muted"
+                    android:textColorHint="@color/text_muted"
                     android:singleLine="true"/>
 
                 <EditText
@@ -389,7 +389,7 @@
                     android:hint="Kelembapan udara RH (%)"
                     android:inputType="numberDecimal"
                     android:textColor="@color/text_main"
-                    android:hintTextColor="@color/text_muted"
+                    android:textColorHint="@color/text_muted"
                     android:singleLine="true"/>
 
                 <EditText
@@ -399,7 +399,7 @@
                     android:hint="Tekanan udara (hPa)"
                     android:inputType="numberDecimal"
                     android:textColor="@color/text_main"
-                    android:hintTextColor="@color/text_muted"
+                    android:textColorHint="@color/text_muted"
                     android:singleLine="true"/>
 
                 <EditText
@@ -409,7 +409,7 @@
                     android:hint="Hujan 24 jam (mm)"
                     android:inputType="numberDecimal"
                     android:textColor="@color/text_main"
-                    android:hintTextColor="@color/text_muted"
+                    android:textColorHint="@color/text_muted"
                     android:singleLine="true"/>
 
                 <EditText
@@ -419,7 +419,7 @@
                     android:hint="ET0 (mm/hari, bila tersedia)"
                     android:inputType="numberDecimal"
                     android:textColor="@color/text_main"
-                    android:hintTextColor="@color/text_muted"
+                    android:textColorHint="@color/text_muted"
                     android:singleLine="true"/>
 
                 <EditText
@@ -429,7 +429,7 @@
                     android:hint="Intensitas cahaya (lux)"
                     android:inputType="numberDecimal"
                     android:textColor="@color/text_main"
-                    android:hintTextColor="@color/text_muted"
+                    android:textColorHint="@color/text_muted"
                     android:singleLine="true"/>
 
                 <EditText
@@ -439,7 +439,7 @@
                     android:hint="PAR (µmol m⁻² s⁻¹), bila tersedia"
                     android:inputType="numberDecimal"
                     android:textColor="@color/text_main"
-                    android:hintTextColor="@color/text_muted"
+                    android:textColorHint="@color/text_muted"
                     android:singleLine="true"/>
 
                 <EditText
@@ -449,7 +449,7 @@
                     android:hint="Lama penyinaran (jam/hari)"
                     android:inputType="numberDecimal"
                     android:textColor="@color/text_main"
-                    android:hintTextColor="@color/text_muted"
+                    android:textColorHint="@color/text_muted"
                     android:singleLine="true"/>
 
                 <TextView
@@ -471,7 +471,7 @@
                     android:hint="Kecepatan angin (m/s)"
                     android:inputType="numberDecimal"
                     android:textColor="@color/text_main"
-                    android:hintTextColor="@color/text_muted"
+                    aandroid:textColorHint="@color/text_muted"
                     android:singleLine="true"/>
 
                 <EditText
@@ -481,7 +481,7 @@
                     android:hint="Suhu dasar Tbase (°C, khusus model GDD/OPT bila diketahui)"
                     android:inputType="numberDecimal"
                     android:textColor="@color/text_main"
-                    android:hintTextColor="@color/text_muted"
+                    android:textColorHint="@color/text_muted"
                     android:singleLine="true"/>
             </LinearLayout>
 
@@ -508,7 +508,7 @@
                     android:gravity="top"
                     android:hint="CATATAN LAPANGAN TERSTRUKTUR:\n[tanaman + fase] [petak/lokasi] [gejala/OPT] [luas/populasi] [cuaca/tanah] [tindakan] [hasil].\nContoh: padi 45 HST, petak A2, ada bercak daun 8% ..."
                     android:textColor="@color/text_main"
-                    android:hintTextColor="@color/text_muted"/>
+                    android:textColorHint="@color/text_muted"/>
 
                 <EditText
                     android:id="@+id/fnAction"
@@ -517,7 +517,7 @@
                     android:gravity="top"
                     android:hint="Tindakan yang dilakukan / rencana berikutnya"
                     android:textColor="@color/text_main"
-                    android:hintTextColor="@color/text_muted"/>
+                    android:textColorHint="@color/text_muted"/>
 
                 <TextView
                     android:id="@+id/fnSave"
