@@ -468,7 +468,7 @@ public class FieldNotesActivity extends Activity {
 
             s.append("\n3. AIR, VPD & CUACA\n");
             if (!Double.isNaN(vpd)) s.append("VPD: ").append(show(vpd)).append(" kPa -> ").append(AgronomyEngine.classifyVpd(vpd)).append("\n"); s.append("VPD + tanah: ").append(AgronomyEngine.vpdCombinedStatus(vpd,moist,fc,pwp,depth,e0,c)).append("\n");
-            else s.append("VPD: data suhu + RH belum lengkap.\n");
+            } else { s.append("VPD: data suhu + RH belum lengkap.\n");)
             s.append(AgronomyEngine.weatherStatus(at, rh, rain, e0, vpd, c)).append("\n");
             if (!Double.isNaN(rain) && !Double.isNaN(e0)) s.append("Neraca sederhana hujan-ET0: ").append(show(rain - e0)).append(" mm; gunakan bersama kelembapan tanah, jangan memakai hujan saja untuk memutuskan irigasi.\n");
             if (!Double.isNaN(pressureHpa)) s.append("Tekanan udara: ").append(show(pressureHpa)).append(" hPa. Tekanan tunggal tidak menentukan hujan/OPT; gunakan bersama tren.\n");
