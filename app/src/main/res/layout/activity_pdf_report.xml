@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@drawable/bg_root">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="14dp">
+        <TextView android:id="@+id/pdfBack" android:layout_width="wrap_content" android:layout_height="40dp"
+            android:text="KEMBALI" android:gravity="center" android:paddingLeft="14dp" android:paddingRight="14dp"
+            android:background="@drawable/bg_button" android:textColor="@color/navy_950"/>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp"
+            android:text="LAPORAN PDF" android:textColor="@color/cyan" android:textSize="22sp" android:textStyle="bold"/>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5dp"
+            android:text="Data • Histori • Analisis • Rekomendasi • AI"
+            android:textColor="@color/text_muted" android:textSize="11sp"/>
+        <Spinner android:id="@+id/pdfReportMode" android:layout_width="match_parent" android:layout_height="50dp" android:layout_marginTop="12dp"/>
+        <TextView android:id="@+id/pdfReportInfo" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="8dp" android:background="@drawable/bg_panel" android:padding="13dp"
+            android:textColor="@color/text_main" android:textSize="12sp" android:lineSpacingExtra="2dp"/>
+        <TextView android:id="@+id/pdfSave" android:layout_width="match_parent" android:layout_height="48dp" android:layout_marginTop="12dp"
+            android:gravity="center" android:text="SIMPAN PDF KE HP" android:background="@drawable/bg_button"
+            android:textColor="@color/navy_950" android:textStyle="bold"/>
+        <TextView android:id="@+id/pdfPrint" android:layout_width="match_parent" android:layout_height="48dp" android:layout_marginTop="9dp"
+            android:gravity="center" android:text="CETAK / PRINT" android:background="@drawable/bg_button"
+            android:textColor="@color/navy_950" android:textStyle="bold"/>
+    </LinearLayout>
+</ScrollView>

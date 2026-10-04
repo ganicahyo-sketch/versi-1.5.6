@@ -1,0 +1,671 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg_root"
+    android:paddingTop="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="16dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CATATAN LAPANGAN"
+                android:textColor="@color/text_main"
+                android:textStyle="bold"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="v1.5.6 • OPEN-METEO + AGRONOMI • TANAH • PUPUK • OPT"
+                android:textColor="@color/cyan"
+                android:textSize="10sp"
+                android:letterSpacing="0.08"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/fnBack"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:gravity="center"
+            android:text="←"
+            android:textColor="@color/text_main"
+            android:textSize="23sp"
+            android:background="@drawable/bg_chip"/>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="18dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_panel"
+                android:padding="14dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="1. IDENTITAS PENGAMATAN"
+                    android:textColor="@color/cyan"
+                    android:textStyle="bold"
+                    android:textSize="11sp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/fnDate"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:hint="Tanggal YYYY-MM-DD"
+                        android:textColor="@color/text_main"
+                        android:hintTextColor="@color/text_muted"
+                        android:singleLine="true"/>
+
+                    <EditText
+                        android:id="@+id/fnTime"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:hint="Jam WIB"
+                        android:textColor="@color/text_main"
+                        android:hintTextColor="@color/text_muted"
+                        android:singleLine="true"/>
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/fnCrop"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="Tanaman/komoditas"
+                    android:textColor="@color/text_main"
+                    android:hintTextColor="@color/text_muted"
+                    android:singleLine="true"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sistem budidaya"
+                    android:textColor="@color/cyan"
+                    android:textSize="11sp"/>
+
+                <Spinner
+                    android:id="@+id/fnCultivation"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"/>
+
+                <EditText
+                    android:id="@+id/fnPlantDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="Tanggal tanam YYYY-MM-DD (agar fase otomatis diprediksi)"
+                    android:textColor="@color/text_main"
+                    android:hintTextColor="@color/text_muted"
+                    android:singleLine="true"/>
+
+                <EditText
+                    android:id="@+id/fnHst"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="Umur tanaman (HST), isi bila tanggal tanam tidak ada"
+                    android:inputType="number"
+                    android:textColor="@color/text_main"
+                    android:hintTextColor="@color/text_muted"
+                    android:singleLine="true"/>
+
+                <Spinner
+                    android:id="@+id/fnAgeUnit"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"/>
+
+                <TextView
+                    android:id="@+id/fnAutoPhase"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Prediksi fase: isi tanggal tanam atau HST."
+                    android:textColor="@color/cyan"
+                    android:textSize="11sp"/>
+
+                <EditText
+                    android:id="@+id/fnTargetYield"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="Target hasil (t/ha), opsional untuk skala kebutuhan hara"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/text_main"
+                    android:hintTextColor="@color/text_muted"
+                    android:singleLine="true"/>
+
+                <EditText
+                    android:id="@+id/fnPhase"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="Fase/umur tanaman, mis. vegetatif, generatif, 45 HST"
+                    android:textColor="@color/text_main"
+                    android:hintTextColor="@color/text_muted"
+                    android:singleLine="true"/>
+
+                <EditText
+                    android:id="@+id/fnArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="Luas petak (ha)"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/text_main"
+                    android:hintTextColor="@color/text_muted"
+                    android:singleLine="true"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Jenis catatan"
+                    android:textColor="@color/cyan"
+                    android:textSize="11sp"/>
+
+                <Spinner
+                    android:id="@+id/fnNoteType"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tingkat kejadian"
+                    android:textColor="@color/cyan"
+                    android:textSize="11sp"/>
+
+                <Spinner
+                    android:id="@+id/fnSeverity"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="vertical"
+                android:background="@drawable/bg_panel"
+                android:padding="14dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="2. SENSOR TANAH CWT-7IN1"
+                    android:textColor="@color/cyan"
+                    android:textStyle="bold"
+                    android:textSize="11sp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="RS485 dan USB memakai parameter yang sama. Nilai sensor dianggap benar dan dipakai sebagai input analisis."
+                    android:textColor="@color/text_muted"
+                    android:textSize="10sp"
+                    android:layout_marginTop="4dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sumber sensor"
+                    android:textColor="@color/cyan"
+                    android:textSize="11sp"
+                    android:layout_marginTop="6dp"/>
+
+                <Spinner
+                    android:id="@+id/fnSoilSource"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"/>
+
+                <EditText
+                    android:id="@+id/fnSoilPh"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="pH tanah"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/text_main"
+                    android:hintTextColor="@color/text_muted"
+                    android:singleLine="true"/>
+
+                <EditText
+                    android:id="@+id/fnSoilMoisture"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="Kelembapan tanah (%)"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/text_main"
+                    android:hintTextColor="@color/text_muted"
+                    android:singleLine="true"/>
+
+                <EditText
+                    android:id="@+id/fnSoilTemp"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="Suhu tanah (°C)"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/text_main"
+                    android:hintTextColor="@color/text_muted"
+                    android:singleLine="true"/>
+
+                <EditText
+                    android:id="@+id/fnSoilEc"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="EC tanah (µS/cm)"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/text_main"
+                    android:hintTextColor="@color/text_muted"
+                    android:singleLine="true"/>
+
+                <EditText
+                    android:id="@+id/fnSoilN"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="N tersedia (mg/kg)"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/text_main"
+                    android:hintTextColor="@color/text_muted"
+                    android:singleLine="true"/>
+
+                <EditText
+                    android:id="@+id/fnSoilP"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="P tersedia (mg/kg)"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/text_main"
+                    android:hintTextColor="@color/text_muted"
+                    android:singleLine="true"/>
+
+                <EditText
+                    android:id="@+id/fnSoilK"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="K tersedia (mg/kg)"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/text_main"
+                    android:hintTextColor="@color/text_muted"
+                    android:singleLine="true"/>
+
+                <EditText
+                    android:id="@+id/fnSoilDepth"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="Kedalaman pengukuran (cm, opsional)"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/text_main"
+                    android:hintTextColor="@color/text_muted"
+                    android:singleLine="true"/>
+
+                <EditText android:id="@+id/fnSoilBulkDensity" android:layout_width="match_parent" android:layout_height="48dp" android:hint="Bulk density (g/cm³), untuk hitung stok hara; default 1,30" android:inputType="numberDecimal" android:textColor="@color/text_main" android:hintTextColor="@color/text_muted" android:singleLine="true"/>
+                <EditText android:id="@+id/fnSoilFc" android:layout_width="match_parent" android:layout_height="48dp" android:hint="Field Capacity / FC (% volume), hasil lab" android:inputType="numberDecimal" android:textColor="@color/text_main" android:hintTextColor="@color/text_muted" android:singleLine="true"/>
+                <EditText android:id="@+id/fnSoilPwp" android:layout_width="match_parent" android:layout_height="48dp" android:hint="Permanent Wilting Point / PWP (% volume), hasil lab" android:inputType="numberDecimal" android:textColor="@color/text_main" android:hintTextColor="@color/text_muted" android:singleLine="true"/>
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Ambang N tersedia (isi sesuai metode/lab, mg/kg)" android:textColor="@color/cyan" android:textSize="11sp"/>
+                <EditText android:id="@+id/fnSoilNLow" android:layout_width="match_parent" android:layout_height="48dp" android:hint="Batas N rendah (mg/kg), opsional" android:inputType="numberDecimal" android:textColor="@color/text_main" android:hintTextColor="@color/text_muted" android:singleLine="true"/>
+                <EditText android:id="@+id/fnSoilNHigh" android:layout_width="match_parent" android:layout_height="48dp" android:hint="Batas N tinggi (mg/kg), opsional" android:inputType="numberDecimal" android:textColor="@color/text_main" android:hintTextColor="@color/text_muted" android:singleLine="true"/>
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Metode analisis N/P/K" android:textColor="@color/cyan" android:textSize="11sp"/>
+                <Spinner android:id="@+id/fnSoilTestMethod" android:layout_width="match_parent" android:layout_height="48dp"/>
+                <EditText android:id="@+id/fnSoilPhBuffer" android:layout_width="match_parent" android:layout_height="48dp" android:hint="pH-buffer (hasil laboratorium), bila pH masam" android:inputType="numberDecimal" android:textColor="@color/text_main" android:hintTextColor="@color/text_muted" android:singleLine="true"/>
+                <EditText android:id="@+id/fnSoilAlDd" android:layout_width="match_parent" android:layout_height="48dp" android:hint="Al-dd (cmol(+)/kg), bila tersedia" android:inputType="numberDecimal" android:textColor="@color/text_main" android:hintTextColor="@color/text_muted" android:singleLine="true"/>
+                <EditText android:id="@+id/fnSoilHDd" android:layout_width="match_parent" android:layout_height="48dp" android:hint="H-dd (cmol(+)/kg), bila tersedia" android:inputType="numberDecimal" android:textColor="@color/text_main" android:hintTextColor="@color/text_muted" android:singleLine="true"/>
+                <EditText android:id="@+id/fnSoilCec" android:layout_width="match_parent" android:layout_height="48dp" android:hint="CEC / KTK (cmol(+)/kg), bila tersedia" android:inputType="numberDecimal" android:textColor="@color/text_main" android:hintTextColor="@color/text_muted" android:singleLine="true"/>
+                <EditText android:id="@+id/fnSoilOm" android:layout_width="match_parent" android:layout_height="48dp" android:hint="Bahan organik (%)" android:inputType="numberDecimal" android:textColor="@color/text_main" android:hintTextColor="@color/text_muted" android:singleLine="true"/>
+                <EditText android:id="@+id/fnSoilEce" android:layout_width="match_parent" android:layout_height="48dp" android:hint="ECe laboratorium (dS/m), jangan diisi dengan EC sensor" android:inputType="numberDecimal" android:textColor="@color/text_main" android:hintTextColor="@color/text_muted" android:singleLine="true"/>
+                <EditText android:id="@+id/fnSoilLimeReq" android:layout_width="match_parent" android:layout_height="48dp" android:hint="Kebutuhan kapur/dolomit hasil lab (kg/ha), bila ada" android:inputType="numberDecimal" android:textColor="@color/text_main" android:hintTextColor="@color/text_muted" android:singleLine="true"/>
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="Catatan: stok hara adalah massa unsur pada lapisan tanah; stok bukan berarti seluruhnya langsung terserap tanaman." android:textColor="@color/text_muted" android:textSize="10sp"/>
+
+                <TextView
+                    android:id="@+id/fnSoilSummary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:text="Ringkasan tanah"
+                    android:textColor="@color/text_main"
+                    android:textSize="11sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="vertical"
+                android:background="@drawable/bg_panel"
+                android:padding="14dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="3. CUACA, AIR &amp; ANGIN"
+                    android:textColor="@color/cyan"
+                    android:textStyle="bold"
+                    android:textSize="11sp"/>
+
+                <EditText
+                    android:id="@+id/fnAirTemp"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="Suhu udara (°C)"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/text_main"
+                    android:hintTextColor="@color/text_muted"
+                    android:singleLine="true"/>
+
+                <EditText
+                    android:id="@+id/fnAirRh"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="Kelembapan udara RH (%)"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/text_main"
+                    android:hintTextColor="@color/text_muted"
+                    android:singleLine="true"/>
+
+                <EditText
+                    android:id="@+id/fnPressure"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="Tekanan udara (hPa)"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/text_main"
+                    android:hintTextColor="@color/text_muted"
+                    android:singleLine="true"/>
+
+                <EditText
+                    android:id="@+id/fnRain24"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="Hujan 24 jam (mm)"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/text_main"
+                    android:hintTextColor="@color/text_muted"
+                    android:singleLine="true"/>
+
+                <EditText
+                    android:id="@+id/fnEt0"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="ET0 (mm/hari, bila tersedia)"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/text_main"
+                    android:hintTextColor="@color/text_muted"
+                    android:singleLine="true"/>
+
+                <EditText
+                    android:id="@+id/fnLux"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="Intensitas cahaya (lux)"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/text_main"
+                    android:hintTextColor="@color/text_muted"
+                    android:singleLine="true"/>
+
+                <EditText
+                    android:id="@+id/fnPar"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="PAR (µmol m⁻² s⁻¹), bila tersedia"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/text_main"
+                    android:hintTextColor="@color/text_muted"
+                    android:singleLine="true"/>
+
+                <EditText
+                    android:id="@+id/fnSunHours"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="Lama penyinaran (jam/hari)"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/text_main"
+                    android:hintTextColor="@color/text_muted"
+                    android:singleLine="true"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Arah angin • tanpa derajat"
+                    android:textColor="@color/cyan"
+                    android:textSize="11sp"/>
+
+                <Spinner
+                    android:id="@+id/fnWindDirection"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"/>
+
+                <EditText
+                    android:id="@+id/fnWindSpeed"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="Kecepatan angin (m/s)"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/text_main"
+                    android:hintTextColor="@color/text_muted"
+                    android:singleLine="true"/>
+
+                <EditText
+                    android:id="@+id/fnBaseTemp"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="Suhu dasar Tbase (°C, khusus model GDD/OPT bila diketahui)"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/text_main"
+                    android:hintTextColor="@color/text_muted"
+                    android:singleLine="true"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="vertical"
+                android:background="@drawable/bg_panel"
+                android:padding="14dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="4. PENGAMATAN &amp; TINDAKAN"
+                    android:textColor="@color/cyan"
+                    android:textStyle="bold"
+                    android:textSize="11sp"/>
+
+                <EditText
+                    android:id="@+id/fnObservation"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:gravity="top"
+                    android:hint="CATATAN LAPANGAN TERSTRUKTUR:\n[tanaman + fase] [petak/lokasi] [gejala/OPT] [luas/populasi] [cuaca/tanah] [tindakan] [hasil].\nContoh: padi 45 HST, petak A2, ada bercak daun 8% ..."
+                    android:textColor="@color/text_main"
+                    android:hintTextColor="@color/text_muted"/>
+
+                <EditText
+                    android:id="@+id/fnAction"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:gravity="top"
+                    android:hint="Tindakan yang dilakukan / rencana berikutnya"
+                    android:textColor="@color/text_main"
+                    android:hintTextColor="@color/text_muted"/>
+
+                <TextView
+                    android:id="@+id/fnSave"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="SIMPAN CATATAN LAPANGAN"
+                    android:textColor="@color/navy_950"
+                    android:textStyle="bold"
+                    android:background="@drawable/bg_button"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/fnAddFertilizer"
+                    android:layout_width="0dp"
+                    android:layout_height="46dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="TAMBAH PUPUK"
+                    android:textColor="@color/navy_950"
+                    android:textStyle="bold"
+                    android:textSize="10sp"
+                    android:background="@drawable/bg_button"/>
+
+                <Space
+                    android:layout_width="8dp"
+                    android:layout_height="1dp"/>
+
+                <TextView
+                    android:id="@+id/fnAddOpt"
+                    android:layout_width="0dp"
+                    android:layout_height="46dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="TAMBAH OPT"
+                    android:textColor="@color/navy_950"
+                    android:textStyle="bold"
+                    android:textSize="10sp"
+                    android:background="@drawable/bg_button"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/fnAnalyze"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="ANALISIS AGRONOMI SEKARANG"
+                android:textColor="@color/navy_950"
+                android:textStyle="bold"
+                android:textSize="11sp"
+                android:background="@drawable/bg_button"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="vertical"
+                android:background="@drawable/bg_panel"
+                android:padding="14dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="5. HASIL MESIN ANALISIS"
+                    android:textColor="@color/cyan"
+                    android:textStyle="bold"
+                    android:textSize="11sp"/>
+
+                <TextView
+                    android:id="@+id/fnAnalysis"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:text="Belum ada analisis."
+                    android:textColor="@color/text_main"
+                    android:textSize="12sp"
+                    android:lineSpacingExtra="2dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="vertical"
+                android:background="@drawable/bg_panel"
+                android:padding="14dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="7. DASAR ILMIAH &amp; BATAS INTERPRETASI"
+                    android:textColor="@color/cyan"
+                    android:textStyle="bold"
+                    android:textSize="11sp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:text="N/P/K dan pH diberi kelas screening bila metode ekstraksi belum diketahui. EC sensor dibaca sebagai tren/risko dan tidak otomatis disamakan dengan ECe laboratorium. Dosis kapur harus memakai uji buffer/kemasaman; dosis pupuk final harus mengutamakan rekomendasi spesifik lokasi."
+                    android:textColor="@color/text_main"
+                    android:textSize="11sp"
+                    android:lineSpacingExtra="2dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:text="Pustaka: FAO-56 Penman–Monteith; FAO salinity/crop water; rekomendasi NPK Pertanian Indonesia 2024; review pH/amendment 2023; model VPD tanaman; model penyakit/leaf wetness APS; model degree-day Spodoptera frugiperda."
+                    android:textColor="@color/text_muted"
+                    android:textSize="10sp"
+                    android:lineSpacingExtra="2dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="vertical"
+                android:background="@drawable/bg_panel"
+                android:padding="14dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="8. TIMELINE CATATAN TERPADU"
+                    android:textColor="@color/cyan"
+                    android:textStyle="bold"
+                    android:textSize="11sp"/>
+
+                <TextView
+                    android:id="@+id/fnTimeline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:text="Belum ada histori."
+                    android:textColor="@color/text_main"
+                    android:textSize="11sp"
+                    android:lineSpacingExtra="2dp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

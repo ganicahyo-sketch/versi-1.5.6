@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@drawable/bg_root">
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="14dp">
+ <TextView android:id="@+id/title" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="STASIUN CUACA" android:textColor="@color/cyan" android:textSize="24sp" android:textStyle="bold"/>
+ <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="DESA TURUS • v1.5.6 • Open-Meteo + Agronomi" android:textColor="@color/text_muted" android:textSize="12sp"/>
+ <TextView android:id="@+id/dateTime" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:text="--" android:textColor="@color/text_main" android:textSize="13sp"/>
+ <TextView android:id="@+id/online" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="--" android:textColor="@color/cyan" android:textStyle="bold" android:textSize="11sp"/>
+ <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:orientation="horizontal">
+  <TextView android:id="@+id/btnRefresh" android:layout_width="0dp" android:layout_height="42dp" android:layout_weight="1" android:gravity="center" android:text="REFRESH" android:background="@drawable/bg_button" android:textColor="@color/navy_950" android:textStyle="bold"/>
+  <TextView android:id="@+id/btnGps" android:layout_width="0dp" android:layout_height="42dp" android:layout_weight="1" android:layout_marginStart="8dp" android:gravity="center" android:text="GUNAKAN GPS HP" android:background="@drawable/bg_button" android:textColor="@color/navy_950" android:textStyle="bold"/>
+  <TextView android:id="@+id/btnSettings" android:layout_width="0dp" android:layout_height="42dp" android:layout_weight="1" android:layout_marginStart="8dp" android:gravity="center" android:text="PENGATURAN" android:background="@drawable/bg_button" android:textColor="@color/navy_950" android:textStyle="bold"/>
+ </LinearLayout>
+ <TextView android:id="@+id/location" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Lokasi: --" android:textColor="@color/text_muted" android:textSize="11sp"/>
+ <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:text="CUACA SAAT INI" android:textColor="@color/cyan" android:textStyle="bold" android:textSize="11sp"/>
+ <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:background="@drawable/bg_panel" android:padding="12dp">
+  <TextView android:id="@+id/weather" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="--" android:textColor="@color/text_main" android:textSize="16sp" android:textStyle="bold"/>
+  <TextView android:id="@+id/temp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Suhu --" android:textColor="@color/text_main" android:textSize="20sp"/>
+  <TextView android:id="@+id/rh" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="RH --" android:textColor="@color/text_main" android:textSize="14sp"/>
+  <TextView android:id="@+id/pressure" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Tekanan --" android:textColor="@color/text_main" android:textSize="14sp"/>
+  <TextView android:id="@+id/apparent" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Suhu terasa --" android:textColor="@color/text_main" android:textSize="14sp"/>
+  <TextView android:id="@+id/dewpoint" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Titik embun --" android:textColor="@color/text_main" android:textSize="14sp"/>
+  <TextView android:id="@+id/cloud" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Awan --" android:textColor="@color/text_main" android:textSize="14sp"/>
+  <TextView android:id="@+id/visibility" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Visibilitas --" android:textColor="@color/text_main" android:textSize="14sp"/>
+  <TextView android:id="@+id/uv" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="UV --" android:textColor="@color/text_main" android:textSize="14sp"/>
+  <TextView android:id="@+id/gust" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Gust --" android:textColor="@color/text_main" android:textSize="14sp"/>
+  <TextView android:id="@+id/rain" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Hujan --" android:textColor="@color/text_main" android:textSize="14sp"/>
+  <TextView android:id="@+id/et0" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="ET0 --" android:textColor="@color/text_main" android:textSize="14sp"/>
+  <TextView android:id="@+id/vpd" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="VPD --" android:textColor="@color/text_main" android:textSize="14sp"/>
+  <TextView android:id="@+id/wind" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Angin --" android:textColor="@color/text_main" android:textSize="14sp"/>
+  <TextView android:id="@+id/sun" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Penyinaran --" android:textColor="@color/text_main" android:textSize="14sp"/>
+  <TextView android:id="@+id/forecast7d" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Forecast 7 hari: --" android:textColor="@color/text_muted" android:textSize="11sp"/>
+  <TextView android:id="@+id/radiation" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Radiasi --" android:textColor="@color/text_main" android:textSize="14sp"/>
+ </LinearLayout>
+ <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:text="CWT-7IN1 • STATUS TANAH" android:textColor="@color/cyan" android:textStyle="bold" android:textSize="11sp"/>
+ <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:background="@drawable/bg_panel" android:padding="12dp">
+  <TextView android:id="@+id/soil" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="--" android:textColor="@color/text_main" android:textSize="13sp"/>
+  <TextView android:id="@+id/soilStatus" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="7dp" android:text="--" android:textColor="@color/text_main" android:textSize="12sp"/>
+ </LinearLayout>
+ <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:text="PREDIKSI POTENSI OPT" android:textColor="@color/cyan" android:textStyle="bold" android:textSize="11sp"/>
+ <TextView android:id="@+id/optRisk" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/bg_panel" android:padding="12dp" android:text="--" android:textColor="@color/text_main" android:textSize="12sp"/>
+ <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:text="REKOMENDASI KESELURUHAN" android:textColor="@color/cyan" android:textStyle="bold" android:textSize="11sp"/>
+ <TextView android:id="@+id/overall" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/bg_panel" android:padding="12dp" android:text="--" android:textColor="@color/text_main" android:textSize="12sp" android:lineSpacingExtra="2dp"/>
+ <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="12dp">
+  <TextView android:id="@+id/btnFieldNotes" android:layout_width="0dp" android:layout_height="44dp" android:layout_weight="1" android:gravity="center" android:text="CATATAN LAPANGAN" android:background="@drawable/bg_button" android:textColor="@color/navy_950" android:textStyle="bold" android:textSize="10sp"/>
+  <TextView android:id="@+id/btnAgronomy" android:layout_width="0dp" android:layout_height="44dp" android:layout_weight="1" android:layout_marginStart="8dp" android:gravity="center" android:text="ANALISIS AGRONOMI" android:background="@drawable/bg_button" android:textColor="@color/navy_950" android:textStyle="bold" android:textSize="10sp"/>
+  <TextView android:id="@+id/btnCsv" android:layout_width="0dp" android:layout_height="44dp" android:layout_weight="1" android:layout_marginStart="8dp" android:gravity="center" android:text="CSV HISTORI" android:background="@drawable/bg_button" android:textColor="@color/navy_950" android:textStyle="bold" android:textSize="10sp"/>
+ </LinearLayout>
+ <TextView android:id="@+id/btnPdfReport" android:layout_width="match_parent" android:layout_height="44dp" android:layout_marginTop="9dp" android:gravity="center" android:text="LAPORAN PDF - SIMPAN / PRINT" android:background="@drawable/bg_button" android:textColor="@color/navy_950" android:textStyle="bold" android:textSize="10sp"/>
+ <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:text="THINGSPeak DATA TERBARU" android:textColor="@color/cyan" android:textStyle="bold" android:textSize="11sp"/>
+ <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:background="@drawable/bg_panel" android:padding="12dp">
+  <TextView android:id="@+id/tsStatus" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="--" android:textColor="@color/text_muted" android:textSize="11sp"/>
+  <TextView android:id="@+id/ts1" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="--" android:textColor="@color/text_main" android:textSize="13sp"/>
+  <TextView android:id="@+id/ts2" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="--" android:textColor="@color/text_main" android:textSize="13sp"/>
+  <TextView android:id="@+id/ts3" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="--" android:textColor="@color/text_main" android:textSize="13sp"/>
+  <TextView android:id="@+id/ts4" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="--" android:textColor="@color/text_main" android:textSize="13sp"/>
+  <TextView android:id="@+id/ts5" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="--" android:textColor="@color/text_main" android:textSize="13sp"/>
+  <TextView android:id="@+id/ts6" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="--" android:textColor="@color/text_main" android:textSize="13sp"/>
+  <TextView android:id="@+id/ts7" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="--" android:textColor="@color/text_main" android:textSize="13sp"/>
+  <TextView android:id="@+id/ts8" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="--" android:textColor="@color/text_main" android:textSize="13sp"/>
+ </LinearLayout>
+</LinearLayout></ScrollView>
