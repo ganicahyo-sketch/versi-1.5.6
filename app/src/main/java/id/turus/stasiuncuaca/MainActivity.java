@@ -48,8 +48,8 @@ public class MainActivity extends Activity {
         findViewById(R.id.btnGps).setOnClickListener(v->requestLocation());
         updateClock();handler.post(clockTick);
     }
-    private final Runnable clockTick=()->{updateClock();handler.postDelayed(clockTick,1000);};
-    private final Runnable refresh=()->{loadAll();handler.postDelayed(refresh,REFRESH_MS);};
+    private final Runnable clockTick = new Runnable() { @Override public void run() { updateClock(); handler.postDelayed(this, 1000);}};
+    private final Runnable refresh = new Runnable() { @Override public void run() { loadAll(); handler.postDelayed(this, REFRESH_MS);}};
     @Override protected void onResume(){super.onResume();handler.removeCallbacks(refresh);loadAll();handler.postDelayed(refresh,REFRESH_MS);}
     @Override protected void onPause(){super.onPause();handler.removeCallbacks(refresh);}
     @Override protected void onDestroy(){handler.removeCallbacksAndMessages(null);net.shutdownNow();super.onDestroy();}
