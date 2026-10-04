@@ -412,7 +412,9 @@ public class FieldNotesActivity extends Activity {
             int days = hstInt();
             double ph = num(soilPh.getText().toString()), ec = num(soilEc.getText().toString()),
                     moist = num(soilMoisture.getText().toString()), st = num(soilTemp.getText().toString());
-            double n = num(soilN.getText().toString()), pp = num(soilP.getText().toString()), k = num(soilK.getText().toString());
+            double n = num(soilN.getText().toString()), pp = num(soilP.getText().toString()), k = num(soilK.getText().toString()); 
+            double nLow = num(soilNLow.getText().toString());
+            double nHigh = num(soilNHigh.getText().toString());
             double at = num(airTemp.getText().toString()), rh = num(airRh.getText().toString()), pressureHpa = num(pressure.getText().toString()), rain = num(rain24.getText().toString()), e0 = num(et0.getText().toString()), luxVal = num(lux.getText().toString()), parVal = num(par.getText().toString()), sunVal = num(sunHours.getText().toString()), wind = num(windSpeed.getText().toString());
             double vpd = AgronomyEngine.vpd(at, rh);
             double[] credit = fertilizerCredit(prefs, c, 90);
