@@ -471,7 +471,7 @@
                     android:hint="Kecepatan angin (m/s)"
                     android:inputType="numberDecimal"
                     android:textColor="@color/text_main"
-                    aandroid:textColorHint="@color/text_muted"
+                    android:textColorHint="@color/text_muted"
                     android:singleLine="true"/>
 
                 <EditText
