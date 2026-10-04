@@ -231,17 +231,7 @@ public class FieldNotesActivity extends Activity {
         return Double.isNaN(raw)?-1:ageToHst(raw);
     }
 
-    private int ageToHst(double raw) {
-        if (!Double.isFinite(raw) || raw < 0) return -1;
-        String u=String.valueOf(ageUnit.getSelectedItem()).toLowerCase(Locale.US);
-        if(u.contains("minggu")) return (int)Math.round(raw*7.0);
-        if(u.contains("bulan")) return (int)Math.round(raw*30.44);
-        if(u.contains("tahun")) return (int)Math.round(raw*365.25);
-        return (int)Math.round(raw);
-    }
-
-
-    private int ageToHst(double raw) {
+        private int ageToHst(double raw) {
         if (!Double.isFinite(raw) || raw < 0) return -1;
         String u=String.valueOf(ageUnit.getSelectedItem()).toLowerCase(Locale.US);
         if(u.contains("minggu")) return (int)Math.round(raw*7.0);
