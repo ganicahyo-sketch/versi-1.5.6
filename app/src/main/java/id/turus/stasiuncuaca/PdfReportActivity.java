@@ -158,7 +158,7 @@ public class PdfReportActivity extends Activity {
     private void addCurrentWeather(ReportCanvas rc, android.content.SharedPreferences p) {
         rc.section("1. DATA CUACA TERKINI + FORECAST");
         rc.kv("Suhu udara", pref("om_temp","--")+" °C");
-        rc.kv("Suhu terasa", pref("om_apparent_temp","--")+" °C");
+        rc.kv("Suhu terasa", pref("om_apparent_temp","--")+" °C");\n        rc.kv("Radiasi Matahari", pref("om_radiation","--")+" W/m²");\n        rc.kv("PAR estimasi", pref("om_par","--")+" W/m²");\n        rc.kv("PPFD estimasi", pref("om_ppfd","--")+" µmol/m²/s");
         rc.kv("Titik embun", pref("om_dewpoint","--")+" °C");
         rc.kv("Kelembapan", pref("om_rh","--")+" %");
         rc.kv("Tekanan", pref("om_pressure","--")+" hPa");
